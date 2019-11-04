@@ -1,0 +1,142 @@
+<web-app>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>Login</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>EmployeeRequests</servlet-name>
+    <servlet-class>EmployeeRequests</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>EmployeeRequests</servlet-name>
+    <url-pattern>/EmployeeRequests</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HrOperation</servlet-name>
+    <servlet-class>HrOperation</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HrOperation</servlet-name>
+    <url-pattern>/HrOperation</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Listout</servlet-name>
+    <servlet-class>Listout</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Listout</servlet-name>
+    <url-pattern>/Listout</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>AddEmp</servlet-name>
+    <servlet-class>AddEmp</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddEmp</servlet-name>
+    <url-pattern>/AddEmp</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <servlet-name>View</servlet-name>
+    <servlet-class>View</servlet-class>
+  </servlet>
+<servlet-mapping>
+    <servlet-name>View</servlet-name>
+    <url-pattern>/View</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Views</servlet-name>
+    <servlet-class>Views</servlet-class>
+  </servlet>
+<servlet-mapping>
+    <servlet-name>Views</servlet-name>
+    <url-pattern>/Views</url-pattern>
+  </servlet-mapping>
+<servlet>
+	<servlet-name>ChangePassword</servlet-name>
+    <servlet-class>ChangePassword</servlet-class>
+  </servlet>
+ <servlet-mapping>
+    <servlet-name>ChangePassword</servlet-name>
+    <url-pattern>/ChangePassword</url-pattern>
+  </servlet-mapping>
+<servlet>
+	<servlet-name>UpdateInfo</servlet-name>
+	<servlet-class>UpdateInfo</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>UpdateInfo</servlet-name>
+	<url-pattern>/UpdateInfo</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>ViewHistory</servlet-name>
+	<servlet-class>ViewHistory</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ViewHistory</servlet-name>
+	<url-pattern>/ViewHistory</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>LoginDetail</servlet-name>
+	<servlet-class>LoginDetail</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LoginDetail</servlet-name>
+	<url-pattern>/LoginDetail</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>UpdateEmp</servlet-name>
+	<servlet-class>UpdateEmp</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>UpdateEmp</servlet-name>
+	<url-pattern>/UpdateEmp</url-pattern>
+</servlet-mapping>
+<filter>
+  <filter-name>AuthenticateFilter</filter-name>
+  <filter-class>AuthenticateFilter</filter-class>
+</filter>
+<filter-mapping>
+  <filter-name>AuthenticateFilter</filter-name>
+  <url-pattern>/LoginDetail</url-pattern>
+  <url-pattern>/UpdateEmp</url-pattern>
+  <url-pattern>/ChangePassword</url-pattern>
+</filter-mapping>
+<security-constraint>
+<web-resource-collection>
+	<web-resource-name>EmployeeManagement</web-resource-name>
+	<url-pattern>/index.jsp</url-pattern>
+	<url-pattern>/Employee.jsp</url-pattern>
+	<url-pattern>/passwordChange.jsp</url-pattern>
+	<url-pattern>/updateEmp.jsp</url-pattern>
+</web-resource-collection>
+<auth-constraint>
+	<role-name>user</role-name>
+</auth-constraint>
+</security-constraint>
+<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>Login</realm-name>
+		<form-login-config>
+			<form-login-page>/welcomePage.jsp</form-login-page>
+			<form-error-page>/login_failed.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+ <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <security-role>
+	<role-name>user</role-name>
+  </security-role>
+</web-app>
